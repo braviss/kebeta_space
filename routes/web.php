@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect'])->name('auth.facebook');
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
