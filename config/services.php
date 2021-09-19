@@ -30,4 +30,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+    'client_id' => env('FACEBOOK_ID'),
+    'client_secret' => env('FACEBOOK_SECRET'),
+    'redirect' => 'https://kebeta.space/auth/facebook/callback',
+    ],
+
+    'google' => [
+    'client_id' => env('GOOGLE_ID'),
+    'client_secret' => env('GOOGLE_SECRET'),
+    'redirect' => 'https://kebeta.space/auth/google/callback',
+    ],
+
 ];
