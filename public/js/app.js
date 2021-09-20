@@ -23201,7 +23201,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-Vue.use((vue_browser_detect_plugin__WEBPACK_IMPORTED_MODULE_9___default()));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__.Head,
@@ -23212,7 +23211,8 @@ Vue.use((vue_browser_detect_plugin__WEBPACK_IMPORTED_MODULE_9___default()));
     JetCheckbox: _Jetstream_Checkbox_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     JetLabel: _Jetstream_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     JetValidationErrors: _Jetstream_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__.Link
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__.Link,
+    browserDetect: (vue_browser_detect_plugin__WEBPACK_IMPORTED_MODULE_9___default())
   },
   props: {
     canResetPassword: Boolean,
