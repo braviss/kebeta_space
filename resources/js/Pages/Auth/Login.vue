@@ -54,6 +54,8 @@
             <a href="/auth/facebook" class="btn btn-primary text-white">facebook</a>
             <a href="/auth/google" class="btn btn-danger text-white">google</a>
             <a href="/auth/apple" class="btn btn-dark text-white">apple</a>
+
+
         </div>
 
 
@@ -78,7 +80,8 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import browserDetect from "vue-browser-detect-plugin";
 
-Vue.use(browserDetect);
+
+
 export default defineComponent({
 
   components: {
@@ -91,6 +94,7 @@ export default defineComponent({
     JetLabel,
     JetValidationErrors,
     Link,
+    browserDetect,
   },
   props: {
     canResetPassword: Boolean,
