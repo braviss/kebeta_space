@@ -87,4 +87,43 @@ class SocialController extends Controller
             dd($exception->getMessage());
         }
     }
+
+    // APPLE
+
+    public function appleRedirect()
+    {
+        return Socialite::driver('apple')->redirect();
+    }
+
+    public function loginWithApple()
+    {
+        try {
+            $user = Socialite::driver('apple')->user();
+            $isUser = User::where('apple_id', $user->id)->first();
+
+            # Если такой пользователь есть авторизуемся
+            # Иначе регистрируем
+            if ($isUser) {
+                Auth::login($isUser);
+
+                return redirect('/dashboard');
+            } else {
+                $createUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'apple_id' => $user->id,
+                    'password' => encrypt('user'),
+                ]);
+
+                Auth::login($createUser);
+
+                return redirect('/dashboard');
+            }
+
+        } catch (Exception $exception) {
+            dd($exception->getMessage());
+        }
+    }
+
+
 }

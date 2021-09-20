@@ -34,7 +34,6 @@
             </label>
           </div>
         </div>
-
         <div class="mb-0">
           <div class="d-flex justify-content-end align-items-baseline">
             <Link v-if="canResetPassword" :href="route('password.request')" class="text-muted mr-3">
@@ -51,16 +50,19 @@
           </div>
         </div>
         <div class="d-grid gap-2 mt-4">
+
             <a href="/auth/facebook" class="btn btn-primary text-white">facebook</a>
             <a href="/auth/google" class="btn btn-danger text-white">google</a>
-
+            <a href="/auth/apple" class="btn btn-dark text-white">apple</a>
         </div>
-
 
 
 
       </form>
     </div>
+
+
+
   </jet-authentication-card>
 </template>
 
@@ -74,8 +76,11 @@ import JetCheckbox from '@/Jetstream/Checkbox.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import browserDetect from "vue-browser-detect-plugin";
 
+Vue.use(browserDetect);
 export default defineComponent({
+
   components: {
     Head,
     JetAuthenticationCard,
@@ -87,11 +92,11 @@ export default defineComponent({
     JetValidationErrors,
     Link,
   },
-
   props: {
     canResetPassword: Boolean,
     status: String
   },
+
 
   data() {
     return {
@@ -102,7 +107,6 @@ export default defineComponent({
       })
     }
   },
-
   methods: {
     submit() {
       this.form
@@ -113,6 +117,7 @@ export default defineComponent({
           .post(this.route('login'), {
             onFinish: () => this.form.reset('password'),
           })
+
     }
   }
 })
