@@ -4,9 +4,11 @@
 
     <jet-banner />
 
-    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
+
+
+  <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
       <div class="container">
-        <!-- Logo -->
+
         <Link class="navbar-brand me-4" :href="route('dashboard')">
           <jet-application-mark width="36" />
         </Link>

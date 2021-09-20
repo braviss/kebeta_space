@@ -42,3 +42,6 @@ Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFaceboo
 
 Route::get('auth/google', [SocialController::class, 'googleRedirect'])->name('auth.google');
 Route::get('auth/google/callback', [SocialController::class, 'loginWithGoogle']);
+
+Route::get('auth/apple', [SocialController::class, 'appleRedirect'])->name('auth.apple');
+Route::get('auth/apple/callback', [SocialController::class, 'loginWithApple']);

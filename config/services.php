@@ -42,4 +42,10 @@ return [
     'redirect' => 'https://kebeta.space/auth/google/callback',
     ],
 
+    'apple' => [
+    'client_id' => env('APPLE_ID'),
+    'client_secret' => env('APPLE_SECRET'),
+    'redirect' => 'https://kebeta.space/auth/apple/callback',
+    ],
+
 ];
