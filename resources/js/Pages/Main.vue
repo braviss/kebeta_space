@@ -1,29 +1,32 @@
 <template>
-    <Head title="Main" />
-
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        cvcxvx
-
-        <div class="col-md-12">
-          dfdsfds
-        </div>
-
-
+  <app-layout title="Main">
+    <template #header>
+      <h2 class="h4 font-weight-bold">
+        Main
+      </h2>
+    </template>
+    <div>
+      <b-tabs content-class="mt-3">
+        <b-tab title="First" active><p>I'm the first tab</p></b-tab>
+        <b-tab title="Second"><p>I'm the second tab</p></b-tab>
+        <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+      </b-tabs>
     </div>
+
+  </app-layout>
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
+import { defineComponent } from "vue"
+import AppLayout from "@/Layouts/AppLayout.vue"
 
-    export default defineComponent({
-        components: {
-            Head,
-            Link,
-        },
 
-        props: {
+export default {
 
-        }
-    })
+       components: {AppLayout},
+       methods: {
+
+       },
+
+   }
 </script>
