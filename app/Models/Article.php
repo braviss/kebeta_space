@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryPost extends Model
+class Article extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-      'id', 'name',
+        'title', 'description', 'text', 'image_path',
     ];
 }
